@@ -1,0 +1,42 @@
+#page {
+    padding: 2em;
+}
+
+h1 {
+    margin-bottom: 1em;
+}
+
+#crossword-wrapper .clue.correct::before {
+    content: "✓";
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(100, 200, 100);
+    margin-right: 0.25em;
+}
+
+#crossword-wrapper {
+    margin-top: 2em;
+}
+
+#messages {
+    background-color: rgb(230, 230, 230);
+    margin: 1em 0;
+    padding: 1em;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+/*# sourceMappingURL=/index.css.map */

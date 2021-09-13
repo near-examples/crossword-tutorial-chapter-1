@@ -45,10 +45,8 @@ const App = ({ data, solutionHash }) => {
           ref={crossword}
           onCrosswordComplete={onCrosswordComplete}
         />
-      </div>
-      <footer>
         <p>Thank you <a href="https://github.com/JaredReisinger/react-crossword" target="_blank" rel="noreferrer">@jaredreisinger/react-crossword</a>!</p>
-      </footer>
+      </div>
     </div>
   );
 }

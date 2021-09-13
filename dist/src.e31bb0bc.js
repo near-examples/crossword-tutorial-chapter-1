@@ -50540,7 +50540,7 @@ const App = ({
   solutionHash
 }) => {
   const crossword = (0, _react.useRef)();
-  const [solutionFound, setSolutionFound] = (0, _react.useState)(false);
+  const [solutionFound, setSolutionFound] = (0, _react.useState)("Not correct yet");
   const onCrosswordComplete = (0, _react.useCallback)(async completeCount => {
     if (completeCount !== false) {
       let gridData = (0, _util.createGridData)(data).gridData;
@@ -50584,7 +50584,6 @@ var _default = App;
 exports.default = _default;
 },{"./App.css":"App.css","react":"../node_modules/react/index.js","react-crossword-near":"../node_modules/react-crossword-near/dist/es/index.js","./utils":"utils.js","react-crossword-near/dist/es/util":"../node_modules/react-crossword-near/dist/es/util.js","js-sha256":"../node_modules/js-sha256/src/sha256.js"}],"config.js":[function(require,module,exports) {
 const CONTRACT_NAME = "snippets.demo.testnet" || 'your-crossword-account.testnet';
-console.log('alaoh contract_name', CONTRACT_NAME);
 
 function getConfig(env) {
   switch (env) {
@@ -50705,7 +50704,7 @@ var _hardcodedData = require("./hardcoded-data");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 async function initCrossword() {
-  const nearConfig = (0, _config.default)("testnet" || 'testnet');
+  const nearConfig = (0, _config.default)(undefined || 'testnet');
   const solutionHash = await (0, _utils.viewMethodOnContract)(nearConfig, 'get_solution');
   return {
     data: _hardcodedData.data,
@@ -50750,7 +50749,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51952" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58798" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

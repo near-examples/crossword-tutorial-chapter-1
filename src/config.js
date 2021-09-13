@@ -1,5 +1,5 @@
 const CONTRACT_NAME = process.env.CONTRACT_NAME || 'your-crossword-account.testnet';
-console.log('alaoh contract_name', CONTRACT_NAME);
+
 function getConfig(env) {
   switch(env) {
     case 'production':

@@ -7,7 +7,7 @@ import sha256 from 'js-sha256';
 
 const App = ({ data, solutionHash }) => {
   const crossword = useRef();
-  const [solutionFound, setSolutionFound] = useState(false);
+  const [solutionFound, setSolutionFound] = useState("Not correct yet");
 
   const onCrosswordComplete = useCallback(
     async (completeCount) => {

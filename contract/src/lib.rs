@@ -20,7 +20,7 @@ impl Contract {
         self.crossword_solution.clone()
     }
 
-    pub fn guess_solution(&mut self, solution: String) -> bool {
+    pub fn guess_solution(&self, solution: String) -> bool {
         let hashed_input = env::sha256(solution.as_bytes());
         let hashed_input_hex = hex::encode(&hashed_input);
 

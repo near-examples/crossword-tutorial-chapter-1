@@ -5,13 +5,13 @@ import * as nearAPI from 'near-api-js';
 
 // Our API could be improved here :)
 // See: https://github.com/near/near-api-js/issues/612
-async function viewMethodOnContract(nearConfig, method) {
+export async function viewMethodOnContract(nearConfig, method) {
   const provider = new nearAPI.providers.JsonRpcProvider(nearConfig.nodeUrl);
   const rawResult = await provider.query(`call/${nearConfig.contractName}/${method}`, 'AQ4'); // Base 58 of '{}'
   return JSON.parse(rawResult.result.map((x) => String.fromCharCode(x)).join(''));
 }
 
-function parseSolutionSeedPhrase(data, gridData) {
+export function parseSolutionSeedPhrase(data, gridData) {
   // JavaScript determining what the highest clue number is
   // Example: 10 if there are ten clues, some which have both across and down clues
   let totalClues = Object.keys(data.across).concat(Object.keys(data.down))
@@ -65,8 +65,3 @@ function parseSolutionSeedPhrase(data, gridData) {
     },
   };
 */
-
-module.exports = {
-  viewMethodOnContract,
-  parseSolutionSeedPhrase
-};

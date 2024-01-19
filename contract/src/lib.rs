@@ -76,8 +76,8 @@ mod tests {
         let context = get_context(alice);
         testing_env!(context.build());
 
-        // Set up contract object and call the new method
-        let mut contract = Contract::new(
+        // Set up contract object and call the set_solution method
+        let mut contract = Contract::set_solution(
             "69c2feb084439956193f4c21936025f14a5a5a78979d67ae34762e18a7206a0f".to_string(),
         );
         let mut guess_result = contract.guess_solution("wrong answer here".to_string());

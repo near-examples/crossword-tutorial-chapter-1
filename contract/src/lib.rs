@@ -70,7 +70,7 @@ mod tests {
     #[test]
     fn check_guess_solution() {
         // Get Alice as an account ID
-        let alice = AccountId::new_unvalidated("alice.testnet".to_string());
+        let alice: AccountId = "alice.testnet".parse().unwrap();
         // Set up the testing context and unit test environment
         let context = get_context(alice);
         testing_env!(context.build());

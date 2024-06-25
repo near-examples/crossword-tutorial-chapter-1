@@ -1,13 +1,12 @@
-use near_sdk::borsh::{self, BorshDeserialize, BorshSerialize};
-use near_sdk::{env, near_bindgen};
+use near_sdk::{env, near};
 
-#[near_bindgen]
-#[derive(Default, BorshDeserialize, BorshSerialize)]
+#[near(contract_state)]
+#[derive(Default)]
 pub struct Contract {
     crossword_solution: String,
 }
 
-#[near_bindgen]
+#[near]
 impl Contract {
     #[init]
     pub fn new(solution: String) -> Self {
@@ -71,13 +70,13 @@ mod tests {
     #[test]
     fn check_guess_solution() {
         // Get Alice as an account ID
-        let alice = AccountId::new_unchecked("alice.testnet".to_string());
+        let alice: AccountId = "alice.testnet".parse().unwrap();
         // Set up the testing context and unit test environment
         let context = get_context(alice);
         testing_env!(context.build());
 
         // Set up contract object and call the new method
-        let mut contract = Contract::new(
+        let contract = Contract::new(
             "69c2feb084439956193f4c21936025f14a5a5a78979d67ae34762e18a7206a0f".to_string(),
         );
         let mut guess_result = contract.guess_solution("wrong answer here".to_string());
